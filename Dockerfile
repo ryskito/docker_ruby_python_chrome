@@ -36,6 +36,7 @@ RUN apt-get update -y && \
       google-chrome-stable \
       xvfb \
       libmecab-dev \
+      tzdata \
       yarn && \
     apt-get clean
 
