@@ -37,6 +37,7 @@ RUN apt-get update -y && \
       xvfb \
       libmecab-dev \
       tzdata \
+      postgresql-client \
       yarn && \
     apt-get clean
 
