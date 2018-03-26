@@ -38,6 +38,7 @@ RUN apt-get update -y && \
       libmecab-dev \
       tzdata \
       postgresql-client \
+      unzip \
       yarn && \
     apt-get clean
 
@@ -47,6 +48,15 @@ RUN dpkg -i google-chrome.deb
 RUN sed -i 's|HERE/chrome\"|HERE/chrome\" --disable-setuid-sandbox|g' /opt/google/chrome/google-chrome
 RUN rm google-chrome.deb
 RUN google-chrome --version
+
+# Install Chromedriver
+RUN curl -O https://chromedriver.storage.googleapis.com/2.37/chromedriver_linux64.zip
+RUN unzip chromedriver_linux64.zip
+RUN chmod +x chromedriver
+RUN mv -f chromedriver /usr/local/share/chromedriver
+RUN ln -s /usr/local/share/chromedriver /usr/local/bin/chromedriver
+RUN ln -s /usr/local/share/chromedriver /usr/bin/chromedriver
+RUN chromedriver -v
 
 # Install Ruby 2.4.3
 RUN git clone https://github.com/sstephenson/rbenv.git /root/.rbenv
