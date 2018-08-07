@@ -67,11 +67,11 @@ RUN touch /root/.bash_profile && echo 'eval "$(rbenv init -)"' >> /root/.bash_pr
 RUN rbenv install 2.4.3 && rbenv global 2.4.3
 RUN gem i bundler
 
-# Install Python 3.5.4
+# Install Python 3.5.3
 RUN git clone https://github.com/pyenv/pyenv.git /root/.pyenv
 ENV PYENV_ROOT /root/.pyenv
 ENV PATH $PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH
-RUN CONFIGURE_OPTS="--enable-shared" pyenv install 3.5.4
-RUN pyenv global 3.5.4
+RUN CONFIGURE_OPTS="--enable-shared" pyenv install 3.5.3
+RUN pyenv global 3.5.3
 RUN pyenv rehash
 
