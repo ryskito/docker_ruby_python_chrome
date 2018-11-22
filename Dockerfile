@@ -42,6 +42,10 @@ RUN apt-get update -y && \
       yarn && \
     apt-get clean
 
+# Japanese env
+RUN apt-get install -y language-pack-ja-base language-pack-ja
+ENV LANG=ja_JP.UTF-8
+
 # Install Google Chrome
 RUN curl -L -o google-chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 RUN dpkg -i google-chrome.deb
