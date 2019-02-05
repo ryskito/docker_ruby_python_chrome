@@ -37,6 +37,8 @@ RUN apt-get update -y && \
       xvfb \
       libmecab-dev \
       tzdata \
+      postgresql \
+      postgresql-contrib \
       postgresql-client \
       unzip \
       yarn && \
