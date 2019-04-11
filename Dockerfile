@@ -64,20 +64,20 @@ RUN ln -s /usr/local/share/chromedriver /usr/local/bin/chromedriver
 RUN ln -s /usr/local/share/chromedriver /usr/bin/chromedriver
 RUN chromedriver -v
 
-# Install Ruby 2.4.3
+# Install Ruby 2.6.2
 RUN git clone https://github.com/sstephenson/rbenv.git /root/.rbenv
 RUN git clone https://github.com/sstephenson/ruby-build.git /root/.rbenv/plugins/ruby-build
 RUN ./root/.rbenv/plugins/ruby-build/install.sh
 ENV PATH /root/.rbenv/bin:/root/.rbenv/shims:$PATH
 RUN touch /root/.bash_profile && echo 'eval "$(rbenv init -)"' >> /root/.bash_profile
-RUN rbenv install 2.4.3 && rbenv global 2.4.3
+RUN rbenv install 2.6.2 && rbenv global 2.6.2
 RUN gem i bundler
 
-# Install Python 3.5.3
+# Install Python 3.7.3
 RUN git clone https://github.com/pyenv/pyenv.git /root/.pyenv
 ENV PYENV_ROOT /root/.pyenv
 ENV PATH $PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH
-RUN CONFIGURE_OPTS="--enable-shared" pyenv install 3.5.3
-RUN pyenv global 3.5.3
+RUN CONFIGURE_OPTS="--enable-shared" pyenv install 3.7.3
+RUN pyenv global 3.7.3
 RUN pyenv rehash
 
