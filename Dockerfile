@@ -64,13 +64,13 @@ RUN ln -s /usr/local/share/chromedriver /usr/local/bin/chromedriver
 RUN ln -s /usr/local/share/chromedriver /usr/bin/chromedriver
 RUN chromedriver -v
 
-# Install Ruby 2.6.2
+# Install Ruby 2.6.3
 RUN git clone https://github.com/sstephenson/rbenv.git /root/.rbenv
 RUN git clone https://github.com/sstephenson/ruby-build.git /root/.rbenv/plugins/ruby-build
 RUN ./root/.rbenv/plugins/ruby-build/install.sh
 ENV PATH /root/.rbenv/bin:/root/.rbenv/shims:$PATH
 RUN touch /root/.bash_profile && echo 'eval "$(rbenv init -)"' >> /root/.bash_profile
-RUN rbenv install 2.6.2 && rbenv global 2.6.2
+RUN rbenv install 2.6.3 && rbenv global 2.6.3
 RUN gem i bundler
 
 # Install Python 3.7.3
