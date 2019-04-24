@@ -40,7 +40,6 @@ RUN apt-get update -y && \
       postgresql \
       postgresql-contrib \
       postgresql-client \
-      mysql-dev \
       unzip \
       yarn && \
     apt-get clean
