@@ -56,7 +56,7 @@ RUN rm google-chrome.deb
 RUN google-chrome --version
 
 # Install Chromedriver
-RUN curl -O https://chromedriver.storage.googleapis.com/78.0.3904.11/chromedriver_linux64.zip
+RUN curl -O https://chromedriver.storage.googleapis.com/78.0.3904.70/chromedriver_linux64.zip
 RUN unzip chromedriver_linux64.zip
 RUN chmod +x chromedriver
 RUN mv -f chromedriver /usr/local/share/chromedriver
